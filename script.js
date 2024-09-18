@@ -31,17 +31,62 @@ const albums = [
     length: 43,
     description:
       `Minutes to Midnight, released in 2007, marks a shift in Linkin Park's sound from nu-metal to alternative rock. Featuring hits like "What I've Done," the album explores themes of personal and political turmoil.`,
+    image: './album-images/Minutes_to_Midnight_cover.jpg'
+  },
+  {
+  title: 'Queen II',
+  artist: 'Queen',
+  year: 1974,
+  genre: 'Pop', 'Rock',//Not sure how to add more values
+  length: 41,
+  description: `Queen II, released in 1974, showcases Queen's early blend of hard rock and progressive elements. With its fantasy themes and complex arrangements, the album features standout tracks like "Seven Seas of Rhye" and "The March of the Black Queen."`,
+  image: './album-images/queen-queenII.jpg'
+  },
+  {
+    title: 'Songs in the Key of Life ',
+    artist: 'Stevie Wonder',
+    year: 1976,
+    genre: 'xx',
+    length: 105,
+    description: `Songs in the Key of Life, released in 1976, is one of Stevie Wonder’s most celebrated albums. Blending soul, jazz, and funk, it features timeless tracks like "Isn't She Lovely" and "Sir Duke," showcasing Wonder's musical genius and social commentary.`,
+    image: './album-images/stevie-wonder-sitkol.jpg'
+  },
+  {
+    title: 'Innuendo',
+    artist: 'Queen',
+    year: 1991,
+    genre: 'Pop',
+    length: ,
+    description: `Innuendo, released in 1991, is Queen's final album with Freddie Mercury. Known for its eclectic sound and emotional depth, it features powerful tracks like the title song "Innuendo" and the poignant "The Show Must Go On."`,
+    image: './album-images/queen-innuendo.jpg'
+  },
+  {
+    title: '',
+    artist: '',
+    year: ,
+    genre: '',
+    length: ,
+    description: ``,
     image: ''
   },
-  // {
-  //   title: '',
-  //   artist: '',
-  //   year: ,
-  //   genre: '',
-  //   length: ,
-  //   description: ``,
-  //   image: ''
-  // },
+  {
+    title: '',
+    artist: '',
+    year: ,
+    genre: '',
+    length: ,
+    description: ``,
+    image: ''
+  },
+  {
+    title: '',
+    artist: '',
+    year: ,
+    genre: '',
+    length: ,
+    description: ``,
+    image: ''
+     },
   //album entry template
   // {
   //   title: '',
