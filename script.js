@@ -10,7 +10,7 @@ const albums = [
     genre: 'rock',
     length: 43,
     description:
-      `Queen's fourth studio album, known for its eclectic mix of musical StyleSheet, including the iconic "Bohemian Rhapsody," and is often hailed as one of the greatest albums of all time.`,
+      `Queen's fourth studio album, known for its eclectic mix of musical styles, including the iconic "Bohemian Rhapsody," and is often hailed as one of the greatest albums of all time.`,
     image: './album-images/queen-opera.jpg'
   },
   {
