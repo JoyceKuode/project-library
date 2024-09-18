@@ -61,32 +61,23 @@ const albums = [
     image: './album-images/queen-innuendo.jpg'
   },
   {
-    title: '',
-    artist: '',
-    year: ,
-    genre: '',
-    length: ,
-    description: ``,
-    image: ''
+    title: 'Ten',
+    artist: 'Pearl Jam',
+    year: 1991,
+    genre: 'Grunge',
+    length: 53,
+    description: `Ten, released in 1991, is Pearl Jam's debut album and a cornerstone of the grunge movement. Featuring iconic tracks like "Alive" and "Jeremy," the album explores themes of personal struggle and resilience with raw intensity.`,
+    image: './album-images/PearlJam-Ten2.jpg'
   },
   {
-    title: '',
-    artist: '',
-    year: ,
-    genre: '',
-    length: ,
-    description: ``,
-    image: ''
+    title: 'Vitalogy',
+    artist: 'Pearl Jam',
+    year: 1994,
+    genre: 'Grunge',
+    length: 55,
+    description: `Vitalogy, released in 1994, is Pearl Jam’s third studio album, blending punk, rock, and experimental sounds. Known for its raw energy and introspective lyrics, the album features standout tracks like "Spin the Black Circle" and "Better Man."`,
+    image: './album-images/PearlJamVitalogy.jpg'
   },
-  {
-    title: '',
-    artist: '',
-    year: ,
-    genre: '',
-    length: ,
-    description: ``,
-    image: ''
-     },
   //album entry template
   // {
   //   title: '',
