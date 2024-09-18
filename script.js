@@ -37,7 +37,7 @@ const albums = [
   title: 'Queen II',
   artist: 'Queen',
   year: 1974,
-  genre: 'Pop', 'Rock',//Not sure how to add more values
+  genre: 'Pop',///How do we add multiple genres? 
   length: 41,
   description: `Queen II, released in 1974, showcases Queen's early blend of hard rock and progressive elements. With its fantasy themes and complex arrangements, the album features standout tracks like "Seven Seas of Rhye" and "The March of the Black Queen."`,
   image: './album-images/queen-queenII.jpg'
@@ -46,7 +46,7 @@ const albums = [
     title: 'Songs in the Key of Life ',
     artist: 'Stevie Wonder',
     year: 1976,
-    genre: 'xx',
+    genre: 'Soul',
     length: 105,
     description: `Songs in the Key of Life, released in 1976, is one of Stevie Wonder’s most celebrated albums. Blending soul, jazz, and funk, it features timeless tracks like "Isn't She Lovely" and "Sir Duke," showcasing Wonder's musical genius and social commentary.`,
     image: './album-images/stevie-wonder-sitkol.jpg'
@@ -55,8 +55,8 @@ const albums = [
     title: 'Innuendo',
     artist: 'Queen',
     year: 1991,
-    genre: 'Pop',
-    length: ,
+    genre: 'Pop',//How do we add multiple genres? 
+    length: 54,
     description: `Innuendo, released in 1991, is Queen's final album with Freddie Mercury. Known for its eclectic sound and emotional depth, it features powerful tracks like the title song "Innuendo" and the poignant "The Show Must Go On."`,
     image: './album-images/queen-innuendo.jpg'
   },
@@ -77,6 +77,42 @@ const albums = [
     length: 55,
     description: `Vitalogy, released in 1994, is Pearl Jam’s third studio album, blending punk, rock, and experimental sounds. Known for its raw energy and introspective lyrics, the album features standout tracks like "Spin the Black Circle" and "Better Man."`,
     image: './album-images/PearlJamVitalogy.jpg'
+  },
+  {
+    title: 'Jurassic Park: Original Motion Picture Soundtrack',
+    artist: 'John Williams',
+    year: 1993,
+    genre: 'Film score',
+    length: 73,
+    description: `Jurassic Park: Original Motion Picture Soundtrack, composed by John Williams and released in 1993, is a sweeping orchestral score that captures the awe and tension of the film. Iconic themes like the majestic "Theme from Jurassic Park" perfectly embody the sense of wonder and danger in the prehistoric adventure.`,
+    image: './album-images/Jurassicpark-1-.jpg'
+  },
+  {
+    title: 'Home Alone: Original Motion Picture Soundtrack',
+    artist: 'John Williams',
+    year: 1990,
+    genre: 'Film score',
+    length: 57,
+    description: `Home Alone: Original Motion Picture Soundtrack, composed by John Williams and released in 1990, combines playful and heartwarming themes with a sense of holiday magic. The iconic "Somewhere in My Memory" beautifully captures the spirit of the film's blend of comedy and Christmas charm.`,
+    image: './album-images/Home_Alone_(Original_Motion_Picture_Soundtrack).jpg'
+  },
+  {
+    title: `Harry Potter and the Philosopher's Stone (Original Motion Picture Soundtrack)`,
+    artist: 'John Williams',
+    year: 2001,
+    genre: 'Film score',
+    length: 74,
+    description: `Harry Potter and the Philosopher's Stone: Original Motion Picture Soundtrack, composed by John Williams and released in 2001, introduces the magical world of Harry Potter with unforgettable themes. The iconic "Hedwig's Theme" perfectly captures the wonder and enchantment that defines the series.`,
+    image: './album-images/HarrypotterPSsoundtrack.jpg'
+  },
+  {
+    title: 'E.T. the Extra-Terrestrial: Music from the Original Soundtrack',
+    artist: 'John Williams',
+    year: 1982,
+    genre: 'Film score',
+    length: 40,
+    description: `E.T. the Extra-Terrestrial: Music from the Original Soundtrack, composed by John Williams and released in 1982, is a heartwarming and emotional score that perfectly complements the film's themes of friendship and adventure. The iconic "Flying Theme" evokes the magic and wonder of E.T.'s journey.`,
+    image: './album-images/E.T._the_Extra-Terrestrial_(soundtrack).jpg'
   },
   //album entry template
   // {
