@@ -48,7 +48,7 @@ const albums = [
     year: 1976,
     genre: 'Soul',
     length: 105,
-    description: `Songs in the Key of Life, released in 1976, is one of Stevie Wonder’s most celebrated albums. Blending soul, jazz, and funk, it features timeless tracks like "Isn't She Lovely" and "Sir Duke," showcasing Wonder's musical genius and social commentary.`,
+    description: `Songs in the Key of Life, released in 1976, is one of Stevie Wonder's most celebrated albums. Blending soul, jazz, and funk, it features timeless tracks like "Isn't She Lovely" and "Sir Duke," showcasing Wonder's musical genius and social commentary.`,
     image: './album-images/stevie-wonder-sitkol.jpg'
   },
   {
@@ -75,7 +75,7 @@ const albums = [
     year: 1994,
     genre: 'Grunge',
     length: 55,
-    description: `Vitalogy, released in 1994, is Pearl Jam’s third studio album, blending punk, rock, and experimental sounds. Known for its raw energy and introspective lyrics, the album features standout tracks like "Spin the Black Circle" and "Better Man."`,
+    description: `Vitalogy, released in 1994, is Pearl Jam's third studio album, blending punk, rock, and experimental sounds. Known for its raw energy and introspective lyrics, the album features standout tracks like "Spin the Black Circle" and "Better Man."`,
     image: './album-images/PearlJamVitalogy.jpg'
   },
   {
