@@ -150,6 +150,42 @@ const albums = [
     description: 'Taylor Swift is the debut studio album by the American singer-songwriter Taylor Swift',
     image: 'album-images/Taylor_Swift_-_Taylor_Swift.png'
   },
+  {
+    title: 'Lover',
+    artist: 'Taylor Swift',
+    year: 2019,
+    genre: 'Country',
+    length: 62,
+    description: 'Lover is the seventh studio album by the American singer-songwriter Taylor Swift.',
+    image: 'album-images/Taylor_Swift_-_Lover.png'
+  },
+  {
+    title: 'Encore',
+    artist: 'Eminem',
+    year: 2004,
+    genre: 'Hip hop',
+    length: 77,
+    description: 'Encore is the fifth studio album by American rapper Eminem.',
+    image: 'album-images/Encore_(Eminem_album)_coverart.jpg'
+  },
+  {
+    title: 'Corps Bride',
+    artist: 'Danny Elfman',
+    year: 2005,
+    genre: 'Soundtrack',
+    length: 60,
+    description: 'Music from the film Corps Bride composed by Danny Elfman',
+    image: 'album-images/CorpseBride.jpg'
+  },
+  {
+    title: 'Led Zepplin IV',
+    artist: 'Led Zepplin',
+    year: 1971,
+    genre: 'Hard rock',
+    length: 43,
+    description: 'Untitled fourth studio album by the English rock band Led Zeppelin, commonly known as Led Zeppelin IV',
+    image: 'album-images/Led_Zeppelin_-_Led_Zeppelin_IV.jpg'
+  },
   //album entry template
   // {
   //   title: '',
