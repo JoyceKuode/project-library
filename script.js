@@ -140,7 +140,7 @@ const albums = [
     length: 46,
     description: `Beyoncé's sixth studio album is a conceptual project exploring themes of infidelity, empowerment, and healing, featuring a diverse mix of genres.`,
     image: './album-images/Beyonce_-_Lemonade_(Official_Album_Cover).png'
-  }
+  },
   {
     title: 'Taylor Swift',
     artist: 'Taylor Swift',
