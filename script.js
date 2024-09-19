@@ -114,6 +114,15 @@ const albums = [
     description: `E.T. the Extra-Terrestrial: Music from the Original Soundtrack, composed by John Williams and released in 1982, is a heartwarming and emotional score that perfectly complements the film's themes of friendship and adventure. The iconic "Flying Theme" evokes the magic and wonder of E.T.'s journey.`,
     image: './album-images/E.T._the_Extra-Terrestrial_(soundtrack).jpg'
   },
+  {
+    title: 'Taylor Swift',
+    artist: 'Taylor Swift',
+    year: 2005,
+    genre: 'Country',
+    length: 40,
+    description: 'Taylor Swift is the debut studio album by the American singer-songwriter Taylor Swift'
+    image: 'album-images/Taylor_Swift_-_Taylor_Swift.png'
+  },
   //album entry template
   // {
   //   title: '',
