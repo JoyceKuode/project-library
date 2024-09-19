@@ -34,13 +34,13 @@ const albums = [
     image: './album-images/Minutes_to_Midnight_cover.jpg'
   },
   {
-  title: 'Queen II',
-  artist: 'Queen',
-  year: 1974,
-  genre: 'Pop',///How do we add multiple genres? 
-  length: 41,
-  description: `Queen II, released in 1974, showcases Queen's early blend of hard rock and progressive elements. With its fantasy themes and complex arrangements, the album features standout tracks like "Seven Seas of Rhye" and "The March of the Black Queen."`,
-  image: './album-images/queen-queenII.jpg'
+    title: 'Queen II',
+    artist: 'Queen',
+    year: 1974,
+    genre: 'Pop',///How do we add multiple genres? 
+    length: 41,
+    description: `Queen II, released in 1974, showcases Queen's early blend of hard rock and progressive elements. With its fantasy themes and complex arrangements, the album features standout tracks like "Seven Seas of Rhye" and "The March of the Black Queen."`,
+    image: './album-images/queen-queenII.jpg'
   },
   {
     title: 'Songs in the Key of Life ',
@@ -114,6 +114,33 @@ const albums = [
     description: `E.T. the Extra-Terrestrial: Music from the Original Soundtrack, composed by John Williams and released in 1982, is a heartwarming and emotional score that perfectly complements the film's themes of friendship and adventure. The iconic "Flying Theme" evokes the magic and wonder of E.T.'s journey.`,
     image: './album-images/E.T._the_Extra-Terrestrial_(soundtrack).jpg'
   },
+  {
+    title: 'Dangerously In Love',
+    artist: 'Beyoncé',
+    year: 2003,
+    genre: 'Pop',
+    length: 78,
+    description: `Beyoncé's debut solo album features a mix of R&B, soul, and hip hop, and includes hits like "Crazy in Love" and "Baby Boy."`,
+    image: './album-images/Dangerously_In_Love_Album(2003).png'
+  },
+  {
+    title: 'Cowboy Carter',
+    artist: 'Beyoncé',
+    year: 2024,
+    genre: 'Country',
+    length: 78,
+    description: `Beyoncé's eighth studio album blends country, R&B, blues, and more, reimagining Americana through the lens of Black pioneers.`,
+    image: './album-images/Beyoncé_-_Cowboy_Carter.png'
+  },
+  {
+    title: 'Lemonade',
+    artist: 'Beyoncé',
+    year: 2016,
+    genre: 'Pop',
+    length: 46,
+    description: `Beyoncé's sixth studio album is a conceptual project exploring themes of infidelity, empowerment, and healing, featuring a diverse mix of genres.`,
+    image: './album-images/Beyonce_-_Lemonade_(Official_Album_Cover).png'
+  }
   //album entry template
   // {
   //   title: '',
