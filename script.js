@@ -7,7 +7,7 @@ const albums = [
     title: 'A Night at the Opera',
     artist: 'Queen',
     year: 1975,
-    genre: 'rock',
+    genre: 'Rock',
     length: 43,
     description:
       `Queen's fourth studio album, known for its eclectic mix of musical styles, including the iconic "Bohemian Rhapsody," and is often hailed as one of the greatest albums of all time.`,
