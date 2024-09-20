@@ -1,3 +1,34 @@
+// Toggle Filter Button
+const filterButton = document.getElementById('filterButton')
+const filterPanel = document.getElementById('filterPanel')
+const sortButton = document.getElementById('sortButton')
+const sortPanel = document.getElementById('sortPanel')
+
+
+const genreSelect = document.getElementById('genreSelect')
+
+//Function to show filter panel
+const showFilterPanel = () => {
+  if (filterPanel.style.display === 'none' || filterPanel.style.display === '') {
+    filterPanel.style.display = 'block'
+  } else {
+    filterPanel.style.display = 'none'
+  }
+}
+
+filterButton.addEventListener('click', showFilterPanel)
+
+// show sort panel
+const showSortPanel = () => {
+  if (sortPanel.style.display === 'none' || sortPanel.style.display === '') {
+    sortPanel.style.display = 'block'
+  } else {
+    sortPanel.style.display = 'none'
+  }
+}
+
+sortButton.addEventListener('click', showSortPanel)
+
 /*Here we have created two different arrays that you can work with if you want.
 If you choose to create your own arrays with elements, just make sure that some
 of the properties make sense to filter on, and some to sort on.*/
@@ -17,7 +48,7 @@ const albums = [
     title: 'Hybrid theory',
     artist: 'Linkin Park',
     year: 2000,
-    genre: 'Alternative rock',
+    genre: 'Rock',
     length: 38,
     description:
       `Linkin Park's debut album, blending nu-metal and rap-rock elements, and featuring hits like "In the End" and "Crawling," which propelled the band to international fame.`,
@@ -27,7 +58,7 @@ const albums = [
     title: 'Minutes to Midnight',
     artist: 'Linkin Park',
     year: 2007,
-    genre: 'Alternative rock',
+    genre: 'Rock',
     length: 43,
     description:
       `Minutes to Midnight, released in 2007, marks a shift in Linkin Park's sound from nu-metal to alternative rock. Featuring hits like "What I've Done," the album explores themes of personal and political turmoil.`,
@@ -64,7 +95,7 @@ const albums = [
     title: 'Ten',
     artist: 'Pearl Jam',
     year: 1991,
-    genre: 'Grunge',
+    genre: 'Rock',
     length: 53,
     description: `Ten, released in 1991, is Pearl Jam's debut album and a cornerstone of the grunge movement. Featuring iconic tracks like "Alive" and "Jeremy," the album explores themes of personal struggle and resilience with raw intensity.`,
     image: './album-images/PearlJam-Ten2.jpg'
@@ -73,7 +104,7 @@ const albums = [
     title: 'Vitalogy',
     artist: 'Pearl Jam',
     year: 1994,
-    genre: 'Grunge',
+    genre: 'Rock',
     length: 55,
     description: `Vitalogy, released in 1994, is Pearl Jam's third studio album, blending punk, rock, and experimental sounds. Known for its raw energy and introspective lyrics, the album features standout tracks like "Spin the Black Circle" and "Better Man."`,
     image: './album-images/PearlJamVitalogy.jpg'
@@ -136,7 +167,7 @@ const albums = [
     title: 'Lemonade',
     artist: 'Beyoncé',
     year: 2016,
-    genre: 'Pop',
+    genre: 'Soul',
     length: 46,
     description: `Beyoncé's sixth studio album is a conceptual project exploring themes of infidelity, empowerment, and healing, featuring a diverse mix of genres.`,
     image: './album-images/Beyonce_-_Lemonade_(Official_Album_Cover).png'
@@ -169,10 +200,10 @@ const albums = [
     image: 'album-images/Encore_(Eminem_album)_coverart.jpg'
   },
   {
-    title: 'Corps Bride',
+    title: 'Corpes Bride',
     artist: 'Danny Elfman',
     year: 2005,
-    genre: 'Soundtrack',
+    genre: 'Film score',
     length: 60,
     description: 'Music from the film Corps Bride composed by Danny Elfman',
     image: 'album-images/CorpseBride.jpg'
@@ -181,7 +212,7 @@ const albums = [
     title: 'Led Zepplin IV',
     artist: 'Led Zepplin',
     year: 1971,
-    genre: 'Hard rock',
+    genre: 'Rock',
     length: 43,
     description: 'Untitled fourth studio album by the English rock band Led Zeppelin, commonly known as Led Zeppelin IV',
     image: 'album-images/Led_Zeppelin_-_Led_Zeppelin_IV.jpg'
@@ -200,12 +231,12 @@ const albums = [
 ]
 const albumContainer = document.getElementById('album-container')
 
-const displayAlbums = () => {
-  albums.forEach(album => {
-    const albumCard = document.createElement("article")
-    albumCard.classList.add("album-card")
-    albumCard.innerHTML = `
-      <div class="album-art">
+const getAlbums = (albumArray) => {
+  albumContainer.innerHTML = ''
+  albumArray.forEach(album => {
+    albumContainer.innerHTML += `
+    <div class="album-card">
+    <div class="album-art">
         <img src="${album.image}" alt="${album.title} album art"/>
         </div>
         <h2>${album.title}</h2>
@@ -214,12 +245,33 @@ const displayAlbums = () => {
         <p>Genre: ${album.genre}</p>
         <p>Length: ${album.length} minutes</p> 
         <p>${album.description}</p>
-        `
-    albumContainer.appendChild(albumCard)
+    </div>`
   })
 }
 
-document.addEventListener('DOMContentLoaded', displayAlbums)
+const filterGenreDropdown = document.getElementById('genreSelect')
+
+const filterGenre = () => {
+  //get value from select
+  const genre = filterGenreDropdown.value
+  console.log('the user selects :', genre)
+  // if the value is gona be all show all the albums
+  if (genre === 'all') {
+    getAlbums(albums)
+  } else {
+    const filteredGenreList = albums.filter(album => album.genre === genre)
+    getAlbums(filteredGenreList)
+    console.log('Filterlist', filteredGenreList)
+  }
+  //else filter the albums by genre
+
+
+}
+
+filterGenreDropdown.addEventListener('change', filterGenre)
+
+getAlbums(albums)
+
 
 // const books = [
 //   {

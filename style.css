@@ -40,8 +40,11 @@ h1 {
 
 
   color: white;
-  background: linear-gradient(90deg, #fff 30%, #ff1493 50%, #fff 70%, #eeefbe 100%);
-  /* background: linear-gradient(135deg, #975adc, #ff1493, #f48acf, #ff69b4); */
+  background: linear-gradient(90deg,
+      #fff 30%,
+      #ff1493 50%,
+      #fff 70%,
+      #eeefbe 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -58,6 +61,50 @@ h1 {
   100% {
     background-position: -100% 0;
   }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.panel {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  width: 300px;
+  background-color: whitesmoke;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#filterButton {
+  padding: 10px 20px;
+  background-color: purple;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#filterButton:hover {
+  background-color: grey;
+}
+
+#sortButton {
+  padding: 10px 20px;
+  background-color: purple;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#sortButton:hover {
+  background-color: grey;
 }
 
 #album-container {

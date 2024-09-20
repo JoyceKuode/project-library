@@ -16,6 +16,61 @@
       <h1>Album Library</h1>
     </div>
   </header>
+
+  <!-- Button Container -->
+  <div class="button-container">
+    <!-- Filter Button -->
+    <button id="filterButton">Filter</button>
+
+    <!-- Filter Panel -->
+    <div id="filterPanel" class="panel">
+      <h3>Filter by</h3>
+      <!--  Select menu for genre  -->
+      <label for="genreSelect">Genre:</label>
+      <select id="genreSelect">
+        <option value="all">Show all</option>
+        <option value="Country">Country</option>
+        <option value="Film score">Film score</option>
+        <option value="Hip hop">Hip hop</option>
+        <option value="Pop">Pop</option>
+        <option value="Rock">Rock</option>
+        <option value="Soul">Soul</option>
+      </select>
+      <label for="artistSelect">Artist:</label>
+      <select id="artistSelect">
+        <option value="all">Show all</option>
+        <option value="artist">Beyoncé</option>
+        <option value="artist">Danny Elfman</option>
+        <option value="artist">Eminem</option>
+        <option value="artist">John Williams</option>
+        <option value="artist">Led Zeppelin</option>
+        <option value="artist">Linkin Park</option>
+        <option value="artist">Pearl Jam</option>
+        <option value="artist">Queen</option>
+        <option value="artist">Stevie Wonder</option>
+        <option value="artist">Taylor Swift</option>
+      </select>
+    </div>
+
+    <!-- Sort Button -->
+    <button id="sortButton">Sort</button>
+    <!-- Sort Panel -->
+    <div id="sortPanel" class="panel">
+      <h3>Sort</h3>
+      <!-- Select menu for sorting -->
+      <select id="sortSelect">
+        <option value="title">Alphabetically by Title A-Z</option>
+        <option value="title">Alphabetically by Title Z-A</option>
+        <option value="artist">Alphabetically by Artist A-Z</option>
+        <option value="artist">Alphabetically by Artist Z-A</option>
+        <option value="year">By Release year Newest to Oldest</option>
+        <option value="year">By Release year Oldest to Newest</option>
+        <option value="length">By Length</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Album Container -->
   <div id="album-container"></div>
   <script src="script.js"></script>
 </body>
