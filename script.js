@@ -18,7 +18,7 @@ const showFilterPanel = () => {
 
 filterButton.addEventListener('click', showFilterPanel)
 
-// show sort panel
+// Show sort panel
 const showSortPanel = () => {
   if (sortPanel.style.display === 'none' || sortPanel.style.display === '') {
     sortPanel.style.display = 'block'
@@ -68,7 +68,7 @@ const albums = [
     title: 'Queen II',
     artist: 'Queen',
     year: 1974,
-    genre: 'Pop',///How do we add multiple genres? 
+    genre: 'Rock', 
     length: 41,
     description: `Queen II, released in 1974, showcases Queen's early blend of hard rock and progressive elements. With its fantasy themes and complex arrangements, the album features standout tracks like "Seven Seas of Rhye" and "The March of the Black Queen."`,
     image: './album-images/queen-queenII.jpg'
@@ -86,7 +86,7 @@ const albums = [
     title: 'Innuendo',
     artist: 'Queen',
     year: 1991,
-    genre: 'Pop',//How do we add multiple genres? 
+    genre: 'Pop',
     length: 54,
     description: `Innuendo, released in 1991, is Queen's final album with Freddie Mercury. Known for its eclectic sound and emotional depth, it features powerful tracks like the title song "Innuendo" and the poignant "The Show Must Go On."`,
     image: './album-images/queen-innuendo.jpg'
@@ -185,7 +185,7 @@ const albums = [
     title: 'Lover',
     artist: 'Taylor Swift',
     year: 2019,
-    genre: 'Country',
+    genre: 'Pop',
     length: 62,
     description: 'Lover is the seventh studio album by the American singer-songwriter Taylor Swift.',
     image: 'album-images/Taylor_Swift_-_Lover.png'
@@ -209,25 +209,14 @@ const albums = [
     image: 'album-images/CorpseBride.jpg'
   },
   {
-    title: 'Led Zepplin IV',
-    artist: 'Led Zepplin',
+    title: 'Led Zeppelin IV',
+    artist: 'Led Zeppelin',
     year: 1971,
     genre: 'Rock',
     length: 43,
     description: 'Untitled fourth studio album by the English rock band Led Zeppelin, commonly known as Led Zeppelin IV',
     image: 'album-images/Led_Zeppelin_-_Led_Zeppelin_IV.jpg'
-  },
-  //album entry template
-  // {
-  //   title: '',
-  //   artist: '',
-  //   year: ,
-  //   genre: '',
-  //   length: ,
-  //   description:
-  //     ``,
-  //   image: ''
-  // },
+  }
 ]
 const albumContainer = document.getElementById('album-container')
 
@@ -249,47 +238,33 @@ const getAlbums = (albumArray) => {
   })
 }
 
-//Filter Genre 
+//Filter Genre & Artist
 
 const filterGenreDropdown = document.getElementById('genreSelect')
-
-const filterGenre = () => {
-  //get value from select
-  const genre = filterGenreDropdown.value
-  console.log('the user selects :', genre)
-  // if the value is gona be all show all the albums
-  if (genre === 'all') {
-    getAlbums(albums)
-    //else filter the albums by genre
-  } else {
-    const filteredGenreList = albums.filter(album => album.genre === genre)
-    getAlbums(filteredGenreList)
-    console.log('Filterlist', filteredGenreList)
-  }
-}
-
-filterGenreDropdown.addEventListener('change', filterGenre)
-
-//Filter Artist
-
 const filterArtistDropdown = document.getElementById('artistSelect')
+const applyFiltersButton = document.getElementById('applyFilters')
 
-const filterArtist = () => {
-  //get value from select
+const filterAlbums = () => {
+  const genre = filterGenreDropdown.value
   const artist = filterArtistDropdown.value
-  console.log('the user selects :', artist)
-  // if the value is gona be all show all the albums
-  if (artist === 'all') {
-    getAlbums(albums)
-    //else filter the albums by artist
-  } else {
-    const filteredArtistList = albums.filter(album => album.artist === artist)
-    getAlbums(filteredArtistList)
-    console.log('Filterlist', filteredArtistList)
+
+  console.log('The user selects genre:', genre, 'and artist:', artist)
+
+  let filteredAlbums = albums;
+
+  if (genre !== 'all') {
+    filteredAlbums = filteredAlbums.filter(album => album.genre === genre)
   }
+
+  if (artist !== 'all') {
+    filteredAlbums = filteredAlbums.filter(album => album.artist === artist)
+  }
+
+  getAlbums(filteredAlbums)
+
 }
 
-filterArtistDropdown.addEventListener('change', filterArtist)
+applyFiltersButton.addEventListener('click', filterAlbums)
 
 // Random button
 
@@ -319,15 +294,6 @@ randomButton.addEventListener("click", getRandomAlbum)
 // Sort and display albums
 
 const sortAlbumDropdown = document.getElementById('sortSelect')
-
-// <option value="alpha-title">Alphabetically by Title A-Z</option>
-// <option value="reverse-title">Alphabetically by Title Z-A</option>
-// <option value="alpha-artist">Alphabetically by Artist A-Z</option>
-// <option value="reverse-artist">Alphabetically by Artist Z-A</option>
-// <option value="newest-year">By Release year Newest to Oldest</option>
-// <option value="oldest-year">By Release year Oldest to Newest</option>
-// <option value="shortest-length">By Length</option>
-// <option value="longest-length">By Length</option>
 
 const sortAlbums = () => {
   const sortOption = sortAlbumDropdown.value
@@ -362,7 +328,6 @@ const sortAlbums = () => {
   }
   getAlbums(sortedAlbums)
 } 
-
 
 sortAlbumDropdown.addEventListener('change', sortAlbums)
 
