@@ -249,6 +249,8 @@ const getAlbums = (albumArray) => {
   })
 }
 
+//Filter Genre 
+
 const filterGenreDropdown = document.getElementById('genreSelect')
 
 const filterGenre = () => {
@@ -258,17 +260,61 @@ const filterGenre = () => {
   // if the value is gona be all show all the albums
   if (genre === 'all') {
     getAlbums(albums)
+    //else filter the albums by genre
   } else {
     const filteredGenreList = albums.filter(album => album.genre === genre)
     getAlbums(filteredGenreList)
     console.log('Filterlist', filteredGenreList)
   }
-  //else filter the albums by genre
-
-
 }
 
 filterGenreDropdown.addEventListener('change', filterGenre)
+
+//Filter Artist
+
+const filterArtistDropdown = document.getElementById('artistSelect')
+
+const filterArtist = () => {
+  //get value from select
+  const artist = filterArtistDropdown.value
+  console.log('the user selects :', artist)
+  // if the value is gona be all show all the albums
+  if (artist === 'all') {
+    getAlbums(albums)
+    //else filter the albums by artist
+  } else {
+    const filteredArtistList = albums.filter(album => album.artist === artist)
+    getAlbums(filteredArtistList)
+    console.log('Filterlist', filteredArtistList)
+  }
+}
+
+filterArtistDropdown.addEventListener('change', filterArtist)
+
+// Random button
+
+const randomButton = document.getElementById('randomButton')
+
+const getRandomAlbum = () => {
+  const randomIndex = Math.floor(Math.random() * albums.length)
+
+  const randomAlbum = albums[randomIndex]
+  albumContainer.innerHTML = ''
+    albumContainer.innerHTML = `
+    <div class="album-card">
+    <div class="album-art">
+        <img src="${randomAlbum.image}" alt="${randomAlbum.title} album art"/>
+        </div>
+        <h2>${randomAlbum.title}</h2>
+        <p>Artist: ${randomAlbum.artist}</p>
+        <p>Release Date: ${randomAlbum.year}</p>
+        <p>Genre: ${randomAlbum.genre}</p>
+        <p>Length: ${randomAlbum.length} minutes</p> 
+        <p>${randomAlbum.description}</p>
+    </div>`
+}
+
+randomButton.addEventListener("click", getRandomAlbum)
 
 getAlbums(albums)
 
