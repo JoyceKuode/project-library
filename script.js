@@ -200,7 +200,7 @@ const albums = [
     image: 'album-images/Encore_(Eminem_album)_coverart.jpg'
   },
   {
-    title: 'Corpes Bride',
+    title: 'Corpse Bride',
     artist: 'Danny Elfman',
     year: 2005,
     genre: 'Film score',
@@ -316,7 +316,59 @@ const getRandomAlbum = () => {
 
 randomButton.addEventListener("click", getRandomAlbum)
 
-getAlbums(albums)
+// Sort and display albums
+
+const sortAlbumDropdown = document.getElementById('sortSelect')
+
+// <option value="alpha-title">Alphabetically by Title A-Z</option>
+// <option value="reverse-title">Alphabetically by Title Z-A</option>
+// <option value="alpha-artist">Alphabetically by Artist A-Z</option>
+// <option value="reverse-artist">Alphabetically by Artist Z-A</option>
+// <option value="newest-year">By Release year Newest to Oldest</option>
+// <option value="oldest-year">By Release year Oldest to Newest</option>
+// <option value="shortest-length">By Length</option>
+// <option value="longest-length">By Length</option>
+
+const sortAlbums = () => {
+  const sortOption = sortAlbumDropdown.value
+  let sortedAlbums
+
+  if (sortOption === 'alpha-title') {
+    sortedAlbums =  albums.sort((a, b) => a.title.localeCompare(b.title))
+  }
+  else if (sortOption === 'reverse-title') {
+    sortedAlbums = albums.sort((a, b) => b.title.localeCompare(a.title))
+  } 
+  else if (sortOption === 'alpha-artist') {
+    sortedAlbums = albums.sort((a, b) => a.artist.localeCompare(b.artist))
+  } 
+  else if (sortOption === 'reverse-artist') {
+    sortedAlbums = albums.sort((a, b) => b.artist.localeCompare(a.artist))
+  } 
+  else if (sortOption === 'newest-year') {
+    sortedAlbums = albums.sort((a, b) => b.year - a.year)
+  } 
+  else if (sortOption === 'oldest-year') {
+    sortedAlbums = albums.sort((a, b) => a.year - b.year)
+  } 
+  else if (sortOption === 'shortest-length') {
+    sortedAlbums = albums.sort((a, b) => a.length - b.length)
+  }
+  else if (sortOption === 'longest-length') {
+    sortedAlbums = albums.sort((a, b) => b.length - a.length)
+  }
+  else {
+     sortedAlbums =  albums.sort((a, b) => a.title.localeCompare(b.title))
+  }
+  getAlbums(sortedAlbums)
+} 
+
+
+sortAlbumDropdown.addEventListener('change', sortAlbums)
+
+sortAlbums()
+
+// getAlbums(albums)
 
 
 // const books = [
