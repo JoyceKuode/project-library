@@ -20,7 +20,7 @@
   <!-- Button Container -->
   <div class="button-container">
     <!-- Filter Button -->
-    <button id="filterButton" class="filter-button">Filter</button>
+    <button id="filterButton" class="button">Filter</button>
 
     <!-- Filter Panel -->
     <div id="filterPanel" class="panel">
@@ -51,11 +51,11 @@
         <option value="Stevie Wonder">Stevie Wonder</option>
         <option value="Taylor Swift">Taylor Swift</option>
       </select>
-      <button id="applyFilters">Apply</button>
+      <button id="applyFilters" class="apply">Apply</button>
     </div>
 
     <!-- Sort Button -->
-    <button id="sortButton">Sort</button>
+    <button id="sortButton" class="button">Sort</button>
     <!-- Sort Panel -->
     <div id="sortPanel" class="panel">
       <span id="closeSortPanel" class="closePanel" style="cursor: pointer;">&times;</span>
@@ -66,20 +66,21 @@
         <option value="reverse-title">Alphabetically by Title Z-A</option>
         <option value="alpha-artist">Alphabetically by Artist A-Z</option>
         <option value="reverse-artist">Alphabetically by Artist Z-A</option>
-        <option value="newest-year">By Release year Newest to Oldest</option>
-        <option value="oldest-year">By Release year Oldest to Newest</option>
-        <option value="shortest-length">By Length shortest to longest</option>
-        <option value="longest-length">By Length longest to shortest</option>
+        <option value="newest-year">By Release Year Newest to Oldest</option>
+        <option value="oldest-year">By Release Year Oldest to Newest</option>
+        <option value="shortest-length">By Length Shortest to Longest</option>
+        <option value="longest-length">By Length Longest to Shortest</option>
       </select>
+      <button id="applySort" class="apply">Apply</button>
     </div>
   </div>
   <div>
     <!-- Random button -->
-    <button id="randomButton">Select Random Album</button>
+    <button id="randomButton" class="random-button">Show Random Album</button>
   </div>
 
   <!-- Album Container -->
-  <div id="album-container"></div>
+  <div id="album-container" class="album-container"></div>
   <script src="script.js"></script>
 </body>
 

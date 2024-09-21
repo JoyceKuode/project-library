@@ -5,8 +5,10 @@ const sortButton = document.getElementById('sortButton')
 const sortPanel = document.getElementById('sortPanel')
 const closeFilterPanel = document.getElementById('closeFilterPanel')
 const closeSortPanel = document.getElementById('closeSortPanel')
+const applyFilterButton = document.getElementById('applyFilters')
+const applySortButton = document.getElementById('applySort')
 
-const genreSelect = document.getElementById('genreSelect')
+const genreSelect = document.getElementById('genreSelect') //do we need this ?
 
 // Function to toggle panels
 const togglePanel = (button, panel) => {
@@ -18,15 +20,36 @@ const togglePanel = (button, panel) => {
 filterButton.addEventListener('click', () => togglePanel(filterButton, filterPanel))
 sortButton.addEventListener('click', () => togglePanel(sortButton, sortPanel))
 
+// Function to close panels
+const closePanel = (panel, button) => {
+  panel.classList.remove('show')
+  button.classList.remove('active')
+}
+
+// Function to close panels with a delay 
+const closePanelWithDelay = (panel, button, delay) => {
+  setTimeout(() => {
+    closePanel(panel, button)
+  }, delay)
+}
+
 // Event listeners for the Close buttons
 closeFilterPanel.addEventListener('click', () => {
-  filterPanel.classList.remove('show')
-  filterButton.classList.remove('active')
+  closePanel(filterPanel, filterButton)
 })
 
 closeSortPanel.addEventListener('click', () => {
-  sortPanel.classList.remove('show')
-  sortButton.classList.remove('active')
+  closePanel(sortPanel, sortButton)
+})
+
+// Event listener for Apply button on Filter panel
+applyFilterButton.addEventListener('click', () => {
+  closePanelWithDelay(filterPanel, filterButton, 500)
+})
+
+// Event listener for Apply button on Sort panel
+applySortButton.addEventListener('click', () => {
+  closePanelWithDelay(sortPanel, sortButton, 700)
 })
 
 // Album array
