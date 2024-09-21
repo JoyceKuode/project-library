@@ -3,35 +3,31 @@ const filterButton = document.getElementById('filterButton')
 const filterPanel = document.getElementById('filterPanel')
 const sortButton = document.getElementById('sortButton')
 const sortPanel = document.getElementById('sortPanel')
-
+const closeFilterPanel = document.getElementById('closeFilterPanel')
+const closeSortPanel = document.getElementById('closeSortPanel')
 
 const genreSelect = document.getElementById('genreSelect')
 
-//Function to show filter panel
-const showFilterPanel = () => {
-  if (filterPanel.style.display === 'none' || filterPanel.style.display === '') {
-    filterPanel.style.display = 'block'
-    filterButton.classList.add('active')
-  } else {
-    filterPanel.style.display = 'none'
-    filterButton.classList.remove('active')
-  }
+// Function to toggle panels
+const togglePanel = (button, panel) => {
+  panel.classList.toggle('show')
+  button.classList.toggle('active')
 }
 
-filterButton.addEventListener('click', showFilterPanel)
+// Event listeners for the Filter and Sort buttons
+filterButton.addEventListener('click', () => togglePanel(filterButton, filterPanel))
+sortButton.addEventListener('click', () => togglePanel(sortButton, sortPanel))
 
-// Show sort panel
-const showSortPanel = () => {
-  if (sortPanel.style.display === 'none' || sortPanel.style.display === '') {
-    sortPanel.style.display = 'block'
-    sortButton.classList.add('active')
-  } else {
-    sortPanel.style.display = 'none'
-    sortButton.classList.remove('active')
-  }
-}
+// Event listeners for the Close buttons
+closeFilterPanel.addEventListener('click', () => {
+  filterPanel.classList.remove('show')
+  filterButton.classList.remove('active')
+})
 
-sortButton.addEventListener('click', showSortPanel)
+closeSortPanel.addEventListener('click', () => {
+  sortPanel.classList.remove('show')
+  sortButton.classList.remove('active')
+})
 
 // Album array
 const albums = [
@@ -221,6 +217,7 @@ const albums = [
 ]
 const albumContainer = document.getElementById('album-container')
 
+// Function to display album information into cards
 const getAlbums = (albumArray) => {
   albumContainer.innerHTML = ''
   albumArray.forEach(album => {
@@ -239,8 +236,7 @@ const getAlbums = (albumArray) => {
   })
 }
 
-//Filter Genre & Artist
-
+// Filter Genre & Artist
 const filterGenreDropdown = document.getElementById('genreSelect')
 const filterArtistDropdown = document.getElementById('artistSelect')
 const applyFiltersButton = document.getElementById('applyFilters')
@@ -248,8 +244,6 @@ const applyFiltersButton = document.getElementById('applyFilters')
 const filterAlbums = () => {
   const genre = filterGenreDropdown.value
   const artist = filterArtistDropdown.value
-
-  console.log('The user selects genre:', genre, 'and artist:', artist)
 
   let filteredAlbums = albums;
 
@@ -262,13 +256,12 @@ const filterAlbums = () => {
   }
 
   getAlbums(filteredAlbums)
-
 }
 
+// Event listener for Apply button in Filter panel
 applyFiltersButton.addEventListener('click', filterAlbums)
 
 // Random button
-
 const randomButton = document.getElementById('randomButton')
 
 const getRandomAlbum = () => {
@@ -288,12 +281,20 @@ const getRandomAlbum = () => {
         <p>Length: ${randomAlbum.length} minutes</p> 
         <p>${randomAlbum.description}</p>
     </div>`
+
+  // Add the clicked class
+  randomButton.classList.add('clicked')
+
+  // Remove the clicked class after a short delay
+  setTimeout(() => {
+    randomButton.classList.remove('clicked')
+  }, 200)
 }
 
-randomButton.addEventListener("click", getRandomAlbum)
+// Event listener to trigger randomAlbum
+randomButton.addEventListener('click', getRandomAlbum)
 
 // Sort and display albums
-
 const sortAlbumDropdown = document.getElementById('sortSelect')
 
 const sortAlbums = () => {

@@ -67,22 +67,92 @@ h1 {
   display: flex;
   justify-content: center;
   position: relative;
-  display: inline-block;
-  gap: 5%;
+  gap: 10%;
 }
 
 .panel {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  max-width: 70vw;
-  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 20vh;
+  right: -100%;
+  /* Start off-screen */
+  width: 500px;
+  height: calc(100% - 20vh);
+  /* Adjust height to fit below the header */
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  border: 2px solid #1b2028;
+  transition: right 0.6s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
   padding: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 2;
+  box-sizing: border-box;
+}
+
+select {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #734a58;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 16px;
+  appearance: none;
+  /* Remove default styling */
+  -webkit-appearance: none;
+  /* Remove default styling in Safari */
+  -moz-appearance: none;
+  /* Remove default styling in Firefox */
+
+}
+
+/* Style the dropdown arrow */
+select::after {
+  content: '▼';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #fff;
+}
+
+#applyFilters {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.panel.show {
+  right: 0;
+}
+
+.closePanel {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  transition: transform 0.2s, color 0.2s;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.closePanel:hover {
+  transform: scale(1.5);
+  color: #800080;
+}
+
+.closePanel:active {
+  transform: scale(1);
+  color: #ff69b4;
 }
 
 #filterButton {
@@ -123,7 +193,7 @@ h1 {
 #randomButton {
   padding: 10px 20px;
   margin-top: 10px;
-  background-color: rgb(95, 3, 95);
+  background-color: #80408c;
   color: white;
   border: none;
   cursor: pointer;
@@ -132,7 +202,11 @@ h1 {
 
 #randomButton:hover {
   background-color: #734a58;
+}
 
+#randomButton.clicked {
+  background-color: #80408c;
+  border: 2px solid purple;
 }
 
 #album-container {
@@ -209,6 +283,11 @@ h1 {
   color: #f1f3f3;
 }
 
+@media (max-width: 768px) {
+  .panel {
+    width: 100%;
+  }
+}
 
 @media (min-width: 900px) {
   h1 {
