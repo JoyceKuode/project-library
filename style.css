@@ -78,7 +78,7 @@ h1 {
   width: 500px;
   height: calc(100% - 20vh);
   /* Adjust height to fit below the header */
-  background-color: rgba(0, 0, 0, 0.88);
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   transition: right 0.9s ease;
   z-index: 1000;
@@ -104,11 +104,16 @@ select {
   width: 100%;
   margin-bottom: 20px;
   font-size: 16px;
+  outline: none;
   appearance: none;
+  -webkit-appearance: none;
+  /* Remove default styling in Safari */
+  -moz-appearance: none;
+  /* Remove default styling in Firefox */
 }
 
 /* Style the dropdown arrow */
-select::after {
+/* select::after {
   content: '▼';
   position: absolute;
   right: 10px;
@@ -116,7 +121,7 @@ select::after {
   transform: translateY(-50%);
   pointer-events: none;
   color: #fff;
-}
+} */
 
 .apply {
   padding: 10px 20px;
@@ -128,6 +133,11 @@ select::after {
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.apply:hover {
+  filter: invert(1);
+  transform: translateY(-5px);
 }
 
 .apply:active {
