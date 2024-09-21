@@ -110,18 +110,12 @@ select {
   /* Remove default styling in Safari */
   -moz-appearance: none;
   /* Remove default styling in Firefox */
+  transition: box-shadow 0.3s ease;
 }
 
-/* Style the dropdown arrow */
-/* select::after {
-  content: '▼';
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  color: #fff;
-} */
+select:focus {
+  box-shadow: 0 0 10px rgba(115, 74, 88, 0.8);
+}
 
 .apply {
   padding: 10px 20px;
