@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
@@ -284,22 +290,24 @@ footer {
   border-top: 4px dotted white;
   margin-top: 4%;
   color: white;
-  padding-top: 2%;
+  padding: 2%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
+
 footer .personal-info-items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 10px;
   width: 100%;
 }
+
 footer h4 {
   font-size: 1rem;
   margin: 5px 0;
-  text-align: center;     
+  text-align: center;
 }
 
 footer i {
@@ -316,6 +324,7 @@ footer a:hover {
   color: purple;
 }
 
+/* For mobile screens */
 @media (max-width: 768px) {
   .panel {
     width: 100%;
@@ -328,10 +337,51 @@ footer a:hover {
   .random-button {
     font-size: 14px;
   }
-}
 
-@media (min-width: 900px) {
-  h1 {
-    font-size: 7vw;
+  footer {
+    margin-bottom: 4px;
+  }
+
+  footer .personal-info-items {
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+    font-size: 6px;
+    gap: 5px;
+    width: 100%;
+  }
+
+  .album-container {
+    flex: 1 1 calc(40% - 20px);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .album-card {
+    width: 45%;
+    padding: 2.2%;
+  }
+
+  .album-art {
+    width: 100%;
+  }
+
+  .album-card h2 {
+    font-size: .75em;
+    margin: 10px 0px 0px 0px;
+  }
+
+  .album-card p {
+    font-size: .65em;
+  }
+
+  .more-info {
+    display: none;
+  }
+
+  @media (min-width: 900px) {
+    h1 {
+      font-size: 7vw;
+    }
   }
 }

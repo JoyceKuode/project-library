@@ -251,10 +251,10 @@ const getAlbums = (albumArray) => {
         </div>
         <h2>${album.title}</h2>
         <p>Artist: ${album.artist}</p>
-        <p>Release Date: ${album.year}</p>
-        <p>Genre: ${album.genre}</p>
-        <p>Length: ${album.length} minutes</p> 
-        <p>${album.description}</p>
+        <p class="more-info">Release Date: ${album.year}</p>
+        <p class="more-info">Genre: ${album.genre}</p>
+        <p class="more-info">Length: ${album.length} minutes</p> 
+        <p class="more-info">${album.description}</p>
     </div>`
   })
 }
