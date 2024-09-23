@@ -239,13 +239,33 @@ const albums = [
   }
 ]
 const albumContainer = document.getElementById('album-container')
+const fullscreenOverlay = document.getElementById('fullscreen-overlay')
+
+// Function to toggle bigger card info on mobile
+const toggleFullScreen = (event) => {
+  const albumCard = event.currentTarget
+  albumCard.classList.toggle('full-screen')
+  fullscreenOverlay.classList.toggle('active')
+}
+
+// Function to close big card on mobile
+const closeFullScreen = (event) => {
+  event.stopPropagation()
+  const albumCard = event.currentTarget.closest('.album-card')
+  albumCard.classList.remove('full-screen')
+  fullscreenOverlay.classList.remove('active')
+}
 
 // Function to display album information into cards
 const getAlbums = (albumArray) => {
   albumContainer.innerHTML = ''
   albumArray.forEach(album => {
-    albumContainer.innerHTML += `
-    <div class="album-card">
+
+    const albumCard = document.createElement('div')
+    albumCard.classList.add('album-card')
+
+    albumCard.innerHTML = `
+
     <div class="album-art">
         <img src="${album.image}" alt="${album.title} album art"/>
         </div>
@@ -255,9 +275,44 @@ const getAlbums = (albumArray) => {
         <p class="more-info">Genre: ${album.genre}</p>
         <p class="more-info">Length: ${album.length} minutes</p> 
         <p class="more-info">${album.description}</p>
-    </div>`
+        <button class="close-btn" aria-label="Close">&times;</button>
+    `
+    // Add click event listener only if screen is mobile
+    if (document.body.classList.contains('mobile')) {
+      albumCard.addEventListener('click', toggleFullScreen)
+    }
+
+    albumContainer.appendChild(albumCard)
+  })
+
+  updateEventListeners()
+}
+
+// Function to update event listeners based on screen size
+const updateEventListeners = () => {
+  const albumCards = document.querySelectorAll('.album-card')
+  albumCards.forEach(albumCard => {
+    albumCard.removeEventListener('click', toggleFullScreen)
+    if (document.body.classList.contains('mobile')) {
+      albumCard.addEventListener('click', toggleFullScreen)
+    }
   })
 }
+
+// Function to check screen size and add/remove mobile class
+const checkScreenSize = () => {
+  if (window.innerWidth <= 768) {
+    document.body.classList.add('mobile')
+  } else {
+    document.body.classList.remove('mobile')
+  }
+  updateEventListeners()
+}
+
+checkScreenSize()
+
+// Check screen size on resize
+window.addEventListener('resize', checkScreenSize)
 
 // Filter Genre & Artist
 const filterGenreDropdown = document.getElementById('genreSelect')
@@ -293,8 +348,8 @@ const getRandomAlbum = () => {
   const randomAlbum = albums[randomIndex]
   albumContainer.innerHTML = ''
   albumContainer.innerHTML = `
-    <div class="album-card">
-    <div class="album-art">
+    <div class="random-card">
+    <div class="random-art">
         <img src="${randomAlbum.image}" alt="${randomAlbum.title} album art"/>
         </div>
         <h2>${randomAlbum.title}</h2>
@@ -305,6 +360,7 @@ const getRandomAlbum = () => {
         <p>${randomAlbum.description}</p>
     </div>`
 
+  // albumContainer.classList.add('random-card')
   // Add the clicked class
   randomButton.classList.add('clicked')
 
