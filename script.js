@@ -264,10 +264,15 @@ const getAlbums = (albumArray) => {
     const albumCard = document.createElement('div')
     albumCard.classList.add('album-card')
 
+    /*
+    Changes for Accessibility:
+    - Added descriptive alt attributes to the images in the album cards to improve accessibility for users who use screen readers
+    */
+
     albumCard.innerHTML = `
 
     <div class="album-art">
-        <img src="${album.image}" alt="${album.title} album art"/>
+        <img src="${album.image}" alt="Album cover for '${album.title}' by ${album.artist}"/>
         </div>
         <h2>${album.title}</h2>
         <p>Artist: ${album.artist}</p>
