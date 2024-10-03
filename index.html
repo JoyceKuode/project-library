@@ -19,14 +19,26 @@
   </header>
 
   <!-- Button Container -->
-  <div class="button-container">
+
+  <!-- Changes for Accessibility: 
+   - Replaced <div> with <nav> for the Navigation buttons. 
+    -->
+  <nav class="button-container">
     <!-- Filter Button -->
     <button id="filterButton" class="button">Filter</button>
 
     <!-- Filter Panel -->
-    <div id="filterPanel" class="panel">
-      <span id="closeFilterPanel" class="closePanel" style="cursor: pointer;">&times;</span>
-      <h3>Filter by</h3>
+     <!--  
+    Changes for Accessibility: 
+       - Aria label "Close Filter Panel". 
+       - Changed <span> to <button>.
+       - <section> instead of <div> for the filter panel.
+       - Renamed Apply button to a more descriptive text, Apply filters. 
+       - Updated the heading elements to follow correct order (h1, h2, h3...).
+       -->
+     <section  id="filterPanel" class="panel">
+      <button id="closeFilterPanel" class="closePanel" aria-label="Close Filter Panel">&times;</button>
+      <h2>Filter by</h2>
       <!--  Select menu for genre  -->
       <label for="genreSelect">Genre:</label>
       <select id="genreSelect">
@@ -52,15 +64,22 @@
         <option value="Stevie Wonder">Stevie Wonder</option>
         <option value="Taylor Swift">Taylor Swift</option>
       </select>
-      <button id="applyFilters" class="apply">Apply</button>
-    </div>
+      <button id="applyFilters" class="apply">Apply filters</button>
+    </section>
 
     <!-- Sort Button -->
     <button id="sortButton" class="button">Sort</button>
     <!-- Sort Panel -->
-    <div id="sortPanel" class="panel">
-      <span id="closeSortPanel" class="closePanel" style="cursor: pointer;">&times;</span>
-      <h3>Sort</h3>
+     <!--  Changes for Accessibility: 
+       - Aria label "Close Sort Panel". 
+       - Changed <span> to <button>.
+       - <section> instead of <div> for the sort panel.
+       - Renamed Apply button to a more descriptive text, Apply sorting.
+       - Updated the heading elements to follow correct order (h1, h2, h3...). 
+        -->
+    <section id="sortPanel" class="panel">
+      <button id="closeSortPanel" class="closePanel" aria-label="Close Sort Panel">&times;</button>
+      <h2>Sort</h2>
       <!-- Select menu for sorting -->
       <select id="sortSelect">
         <option value="alpha-title">Alphabetically by Title A-Z</option>
@@ -72,42 +91,48 @@
         <option value="shortest-length">By Length Shortest to Longest</option>
         <option value="longest-length">By Length Longest to Shortest</option>
       </select>
-      <button id="applySort" class="apply">Apply</button>
-    </div>
-  </div>
+      <button id="applySort" class="apply">Apply sorting</button>
+    </section>
+  </nav>
   <div>
     <!-- Random button -->
     <button id="randomButton" class="random-button">Show Random Album</button>
   </div>
 
   <!-- Album Container -->
-  <div id="album-container" class="album-container"></div>
+   <!-- Changes for Accessibility: 
+    - Changed <div> to <main>, since this is the main content-->
+  <main id="album-container" class="album-container"></main>
   <script src="script.js"></script>
-  <!-- personal info -->
+
+  <!-- Personal info -->
 
   <footer>
     <div class="personal-info-items">
-      <h4 class="github-account">
-        <a href="https://github.com/JoyceKuode" target="_blank">
-          <img src="album-images/png-transparent-github-git-hub-logo-icon-thumbnail-removebg-preview.png" alt="GitHub"
-            width="20"> JoyceKuode
+      <!-- Changes for Accessibility: 
+       - Updated the heading elements to follow correct order (h1, h2, h3...)
+       - aria-labels that describe the links 
+       --->
+      <h3 class="github-account">
+        <a href="https://github.com/JoyceKuode" aria-label="Link to Joyce's GitHub account" target="_blank">
+          <img src="album-images/png-transparent-github-git-hub-logo-icon-thumbnail-removebg-preview.png" alt="GitHub Logo" width="20"> JoyceKuode
         </a>
-      </h4>
-      <h4>
-        <a href="https://github.com/IamLise" target="_blank">
+      </h3>
+      <h3>
+        <a href="https://github.com/IamLise" aria-label="Link to Liselotte's GitHub account" target="_blank">
           <img src="album-images/png-transparent-github-git-hub-logo-icon-thumbnail-removebg-preview.png"
-            alt="GitHub Logo" width="20"> IamLise
+          alt="GitHub Logo" width="20"> IamLise
         </a>
-      </h4>
-      <h4>
-        <a href="https://github.com/Joheri1" target="_blank">
+      </h3>
+      <h3>
+        <a href="https://github.com/Joheri1" aria-label="Link to Johanna's GitHub account" target="_blank">
           <img src="album-images/png-transparent-github-git-hub-logo-icon-thumbnail-removebg-preview.png"
-            alt="GitHub Logo" width="20"> Joheri1
+          alt="GitHub Logo" width="20"> Joheri1
         </a>
-      </h4>
+      </h3>
     </div>
     <div>
-      <h4>© 2024 Copyright - Developed by Joyce Kuo, Liselotte Engström, and Johanna Eriksson</h4>
+      <h3>© 2024 Copyright - Developed by Joyce Kuo, Liselotte Engström, and Johanna Eriksson</h3>
     </div>
   </footer>
 </body>
