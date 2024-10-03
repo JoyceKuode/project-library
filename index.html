@@ -10,7 +10,12 @@
   <title>Album Library</title>
 </head>
 
+<!-- Changes for Accessibility: 
+ - Added a Skip to main content" link to improve naviation
+-->
 <body>
+  <a href="#album-container" class="skip-link">Skip to main content</a>
+  
   <div id="fullscreen-overlay" class="fullscreen-overlay"></div>
   <header class="header">
     <div class="overlay">
@@ -64,7 +69,7 @@
         <option value="Stevie Wonder">Stevie Wonder</option>
         <option value="Taylor Swift">Taylor Swift</option>
       </select>
-      <button id="applyFilters" class="apply">Apply filters</button>
+       <button id="applyFilters" class="apply">Apply filters</button>
     </section>
 
     <!-- Sort Button -->
@@ -91,7 +96,7 @@
         <option value="shortest-length">By Length Shortest to Longest</option>
         <option value="longest-length">By Length Longest to Shortest</option>
       </select>
-      <button id="applySort" class="apply">Apply sorting</button>
+       <button id="applySort" class="apply">Apply sorting</button>
     </section>
   </nav>
   <div>

@@ -18,6 +18,22 @@ body {
   box-sizing: border-box;
 }
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+
 .header {
   background-image: url('./album-images/header-image.jpg');
   background-size: cover;
@@ -157,6 +173,10 @@ select:focus {
   transition: transform 0.2s, color 0.2s;
   padding: 5px;
   border-radius: 50%;
+  color: white; /* Change default color for buttons */
+  border: none; /* Remove default behaviors for buttons */
+  background: none; /* Remove default background for buttons */
+  transition: transform 0.2s, color 0.2s; /* Add the hover effects to the button*/
 }
 
 .closePanel:hover {
