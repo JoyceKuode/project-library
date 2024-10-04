@@ -81,11 +81,13 @@
        - <section> instead of <div> for the sort panel.
        - Renamed Apply button to a more descriptive text, Apply sorting.
        - Updated the heading elements to follow correct order (h1, h2, h3...). 
+       - Fix Lighthouse warning: Added a <label> element for the sort <select> element to improve accessibility for screen reader users.
         -->
     <section id="sortPanel" class="panel">
       <button id="closeSortPanel" class="closePanel" aria-label="Close Sort Panel">&times;</button>
       <h2>Sort</h2>
       <!-- Select menu for sorting -->
+      <label for="sortSelect">Sort by:</label>
       <select id="sortSelect">
         <option value="alpha-title">Alphabetically by Title A-Z</option>
         <option value="reverse-title">Alphabetically by Title Z-A</option>
