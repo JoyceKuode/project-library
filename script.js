@@ -1,58 +1,6 @@
-// DOM selectors
-const filterButton = document.getElementById('filterButton')
-const filterPanel = document.getElementById('filterPanel')
-const sortButton = document.getElementById('sortButton')
-const sortPanel = document.getElementById('sortPanel')
-const closeFilterPanel = document.getElementById('closeFilterPanel')
-const closeSortPanel = document.getElementById('closeSortPanel')
-const applyFilterButton = document.getElementById('applyFilters')
-const applySortButton = document.getElementById('applySort')
-
-const genreSelect = document.getElementById('genreSelect') //do we need this ?
-
-// Function to toggle panels
-const togglePanel = (button, panel) => {
-  panel.classList.toggle('show')
-  button.classList.toggle('active')
-}
-
-// Event listeners for the Filter and Sort buttons
-filterButton.addEventListener('click', () => togglePanel(filterButton, filterPanel))
-sortButton.addEventListener('click', () => togglePanel(sortButton, sortPanel))
-
-// Function to close panels
-const closePanel = (panel, button) => {
-  panel.classList.remove('show')
-  button.classList.remove('active')
-}
-
-// Function to close panels with a delay 
-const closePanelWithDelay = (panel, button, delay) => {
-  setTimeout(() => {
-    closePanel(panel, button)
-  }, delay)
-}
-
-// Event listeners for the Close buttons
-closeFilterPanel.addEventListener('click', () => {
-  closePanel(filterPanel, filterButton)
-})
-
-closeSortPanel.addEventListener('click', () => {
-  closePanel(sortPanel, sortButton)
-})
-
-// Event listener for Apply button on Filter panel
-applyFilterButton.addEventListener('click', () => {
-  closePanelWithDelay(filterPanel, filterButton, 500)
-})
-
-// Event listener for Apply button on Sort panel
-applySortButton.addEventListener('click', () => {
-  closePanelWithDelay(sortPanel, sortButton, 700)
-})
-
-// Album array
+/* *********************************
+  Array with objects - List of albums
+********************************* */
 const albums = [
   {
     title: 'A Night at the Opera',
@@ -238,6 +186,62 @@ const albums = [
     image: 'album-images/Led_Zeppelin_-_Led_Zeppelin_IV.jpg'
   }
 ]
+/* *********************************
+  DOM SELECTORS 
+********************************* */
+const filterButton = document.getElementById('filterButton')
+const filterPanel = document.getElementById('filterPanel')
+const sortButton = document.getElementById('sortButton')
+const sortPanel = document.getElementById('sortPanel')
+const closeFilterPanel = document.getElementById('closeFilterPanel')
+const closeSortPanel = document.getElementById('closeSortPanel')
+const applyFilterButton = document.getElementById('applyFilters')
+const applySortButton = document.getElementById('applySort')
+
+const genreSelect = document.getElementById('genreSelect') //do we need this ?
+
+// Function to toggle panels
+const togglePanel = (button, panel) => {
+  panel.classList.toggle('show')
+  button.classList.toggle('active')
+}
+
+// Event listeners for the Filter and Sort buttons
+filterButton.addEventListener('click', () => togglePanel(filterButton, filterPanel))
+sortButton.addEventListener('click', () => togglePanel(sortButton, sortPanel))
+
+// Function to close panels
+const closePanel = (panel, button) => {
+  panel.classList.remove('show')
+  button.classList.remove('active')
+}
+
+// Function to close panels with a delay 
+const closePanelWithDelay = (panel, button, delay) => {
+  setTimeout(() => {
+    closePanel(panel, button)
+  }, delay)
+}
+
+// Event listeners for the Close buttons
+closeFilterPanel.addEventListener('click', () => {
+  closePanel(filterPanel, filterButton)
+})
+
+closeSortPanel.addEventListener('click', () => {
+  closePanel(sortPanel, sortButton)
+})
+
+// Event listener for Apply button on Filter panel
+applyFilterButton.addEventListener('click', () => {
+  closePanelWithDelay(filterPanel, filterButton, 500)
+})
+
+// Event listener for Apply button on Sort panel
+applySortButton.addEventListener('click', () => {
+  closePanelWithDelay(sortPanel, sortButton, 700)
+})
+
 const albumContainer = document.getElementById('album-container')
 const fullscreenOverlay = document.getElementById('fullscreen-overlay')
 
