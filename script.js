@@ -198,8 +198,6 @@ const closeSortPanel = document.getElementById('closeSortPanel')
 const applyFilterButton = document.getElementById('applyFilters')
 const applySortButton = document.getElementById('applySort')
 
-const genreSelect = document.getElementById('genreSelect') //do we need this ?
-
 // Function to toggle panels
 const togglePanel = (button, panel) => {
   panel.classList.toggle('show')
@@ -369,7 +367,6 @@ const getRandomAlbum = () => {
         <p>${randomAlbum.description}</p>
     </div>`
 
-  // albumContainer.classList.add('random-card')
   // Add the clicked class
   randomButton.classList.add('clicked')
 
