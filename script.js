@@ -265,6 +265,7 @@ const getAlbums = (albumArray) => {
 
     const albumCard = document.createElement('div')
     albumCard.classList.add('album-card')
+    albumCard.setAttribute('role', 'article')
 
     /*
     Changes for Accessibility:
@@ -274,10 +275,10 @@ const getAlbums = (albumArray) => {
     albumCard.innerHTML = `
 
     <div class="album-art">
-        <img src="${album.image}" alt="Album cover for '${album.title}' by ${album.artist}"/>
+        <img src="${album.image}" alt="'${album.title}' album art."/>
         </div>
         <h2>${album.title}</h2>
-        <p>Artist: ${album.artist}</p>
+        <p><strong>Artist:</strong> ${album.artist}</p>
         <p class="more-info">Release Date: ${album.year}</p>
         <p class="more-info">Genre: ${album.genre}</p>
         <p class="more-info">Length: ${album.length} minutes</p> 
@@ -288,7 +289,6 @@ const getAlbums = (albumArray) => {
     if (document.body.classList.contains('mobile')) {
       albumCard.addEventListener('click', toggleFullScreen)
     }
-
     albumContainer.appendChild(albumCard)
   })
 

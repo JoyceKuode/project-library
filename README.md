@@ -15,7 +15,7 @@ In the code, I have added comments labeled **"Changes for Accessibility"** to sh
 
 #### **HTML:**
 - Changed ```<span>``` to ```<button>```.
-- Replaced ```<div>` with ```<nav>``` for navigation buttons.
+- Replaced ```<div>``` with ```<nav>``` for navigation buttons.
 - Used ```<section>``` instead of ```<div>``` for the filter panel.
 - Updated heading elements to follow the correct sequential order.
 - Added aria-labels to describe links and buttons for screen readers.
@@ -26,6 +26,9 @@ In the code, I have added comments labeled **"Changes for Accessibility"** to sh
 
 #### **JavaScript:**
 - Added descriptive alt attributes to images for better screen reader accessibility.
+
+#### If I had more time
+- I would work on improving the voicever functionality by making the panels invisible to screen readers when closed. Now it reads the content inside the panels even when they’re not visible to the user. I’d also edit the text for the album cards to avoid repetition when read by the screen reader.
 
 ## Live Demo:
 - **Improved Accessibility version**: https://a11yjojolialbumlibrary.netlify.app/

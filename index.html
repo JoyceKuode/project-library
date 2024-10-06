@@ -108,8 +108,13 @@
 
   <!-- Album Container -->
    <!-- Changes for Accessibility: 
-    - Changed <div> to <main>, since this is the main content-->
-  <main id="album-container" class="album-container"></main>
+    - Changed <div> to <main>, since this is the main content
+    - Added aria-live=polite on the album container to ensure that dynamically loaded content is announced to screen readers
+  -->
+
+      <main>
+        <div id="album-container" class="album-container" aria-live="polite"></div>
+      </main>
   <script src="script.js"></script>
 
   <!-- Personal info -->
