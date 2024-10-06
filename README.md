@@ -14,9 +14,9 @@ After implementing several accessibility improvements, the site scored 100 in Ac
 In the code, I have added comments labeled **"Changes for Accessibility"** to show what changes were made. Below is a selection of the changes:
 
 #### **HTML:**
-- Changed \`<span>\` to \`<button>\`.
-- Replaced \`<div>\` with \`<nav>\` for navigation buttons.
-- Used \`<section>\` instead of \`<div>\` for the filter panel.
+- Changed ```<span>``` to ```<button>```.
+- Replaced ```<div>` with ```<nav>``` for navigation buttons.
+- Used ```<section>``` instead of ```<div>``` for the filter panel.
 - Updated heading elements to follow the correct sequential order.
 - Added aria-labels to describe links and buttons for screen readers.
 
