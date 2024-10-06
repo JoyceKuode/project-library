@@ -189,7 +189,12 @@ select:focus {
   color: #ff69b4;
 }
 
+/* Changes for Accessibility:
+- Added a minimum width and height to 44 pixels, the minimum recommended click area size.
+*/
 .button {
+  min-width: 44px; 
+  min-height: 44px;
   padding: 10px 20px;
   text-align: center;
   background-color: rgb(18, 2, 12);
@@ -203,7 +208,7 @@ select:focus {
 }
 
 /* Changes for Accessibility: 
-- Darker grey for contrast 
+- Darker grey background color for contrast 
 */ 
 .button:hover {
   background-color: #4d4d4d;
@@ -213,7 +218,12 @@ select:focus {
   background-color: rgb(63, 6, 63);
 }
 
+/* Changes for Accessibility:
+- Added a minimum width and height to 44 pixels, the minimum recommended click area size.
+*/
 .random-button {
+  min-width: 44px; 
+  min-height: 44px;
   padding: 10px 20px;
   margin-top: 10px;
   background-color: rgb(18, 2, 12);
@@ -359,8 +369,12 @@ footer h3 {
 footer i {
   margin-right: 8px;
 }
-
+/* Changes for Accessibility:
+- Added a minimum width and height to 44 pixels, the minimum recommended click area size.
+*/
 footer a {
+  min-width: 44px;
+  min-height: 44px;
   color: white;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -376,12 +390,21 @@ footer a:hover {
     width: 100%;
   }
 
+  /* Changes for Accessibility:
+- Added a minimum width and height to 44 pixels, the minimum recommended click area size.
+*/
   .button {
     font-size: 14px;
+    min-width: 44px; 
+    min-height: 44px;
   }
-
+  /* Changes for Accessibility:
+  - Added a minimum width and height to 44 pixels, the minimum recommended click area size.
+  */
   .random-button {
     font-size: 14px;
+    min-width: 44px; 
+    min-height: 44px;
   }
 
   footer {
