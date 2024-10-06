@@ -22,7 +22,7 @@ In the code, I have added comments labeled **"Changes for Accessibility"** to sh
 
 #### **CSS:**
 - Set a darker background color to improve contrast.
-- Applied min-width and min-height of 44px to buttons and clickable areas to meet the recommended touch target size.
+- Added min-width and min-height of 44px to buttons and clickable areas to meet the recommended touch target size.
 
 #### **JavaScript:**
 - Added descriptive alt attributes to images for better screen reader accessibility.
