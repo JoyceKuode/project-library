@@ -15,7 +15,7 @@ In the code, I have added comments labeled **"Changes for Accessibility"** to sh
 
 #### **HTML:**
 - Changed ```<span>``` to ```<button>```.
-- Replaced ```<div>` with ```<nav>``` for navigation buttons.
+- Replaced ```<div>``` with ```<nav>``` for navigation buttons.
 - Used ```<section>``` instead of ```<div>``` for the filter panel.
 - Updated heading elements to follow the correct sequential order.
 - Added aria-labels to describe links and buttons for screen readers.
